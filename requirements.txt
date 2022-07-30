@@ -1,0 +1,6 @@
+fastapi
+pandas
+uvicorn
+pydantic
+SQLAlchemy
+typing_extensions
