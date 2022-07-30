@@ -20,7 +20,7 @@ if page == "users":
 		submit_button = st.form_submit_button(label="ユーザー登録")
 
 	if submit_button:
-		url = "http://127.0.0.1:8000/users"
+		url = "https://ren7087-meeting-system-app-45xj5n.streamlitapp.com/users"
 		res = requests.post (
 			url,
 			data = json.dumps(data)
@@ -60,7 +60,7 @@ elif page == "bookings":
 	st.title("会議室予約画面")
 
 	# ユーザー一覧
-	url_users = "http://127.0.0.1:8000/users"
+	url_users = "https://ren7087-meeting-system-app-45xj5n.streamlitapp.com/users"
 	res = requests.get(url_users)
 	users = res.json()
 	users_name = {}
@@ -68,7 +68,7 @@ elif page == "bookings":
 		users_name[user["username"]] = user["user_id"]
 
 	# 会議室一覧
-	url_rooms = "http://127.0.0.1:8000/rooms"
+	url_rooms = "https://ren7087-meeting-system-app-45xj5n.streamlitapp.com/rooms"
 	res = requests.get(url_rooms)
 	rooms = res.json()
 	rooms_name = {}
@@ -84,7 +84,7 @@ elif page == "bookings":
 	st.table(df_rooms)
 
 
-	url_bookings = "http://127.0.0.1:8000/bookings"
+	url_bookings = "https://ren7087-meeting-system-app-45xj5n.streamlitapp.com/bookings"
 	res = requests.get(url_bookings)
 	bookings = res.json()
 	df_bookings = pd.DataFrame(bookings)
@@ -157,7 +157,7 @@ elif page == "bookings":
 		}
 
 		if booked_num <= capacity:
-			url = "http://127.0.0.1:8000/bookings"
+			url = "https://ren7087-meeting-system-app-45xj5n.streamlitapp.com/bookings"
 			res = requests.post (
 				url,
 				data = json.dumps(data)
